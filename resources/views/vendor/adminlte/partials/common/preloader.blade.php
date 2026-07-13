@@ -1,22 +1,14 @@
 @inject('preloaderHelper', 'JeroenNoten\LaravelAdminLte\Helpers\PreloaderHelper')
 
-<div class="{{ $preloaderHelper->makePreloaderClasses() }}" style="{{ $preloaderHelper->makePreloaderStyle() }}">
+<div class="preloader flex-column justify-content-center align-items-center">
 
-    @hasSection('preloader')
+    <img class="animation__pulse"
+        src="{{ asset('vendor/adminlte/dist/img/logo-removebg-preview.png') }}"
+        alt="DUOs Laundry"
+        width="120">
 
-        {{-- Use a custom preloader content --}}
-        @yield('preloader')
-
-    @else
-
-        {{-- Use the default preloader content --}}
-        <img src="{{ asset(config('adminlte.preloader.img.path', 'vendor/adminlte/dist/img/AdminLTELogo.png')) }}"
-             class="img-circle {{ config('adminlte.preloader.img.effect', 'animation__shake') }}"
-             alt="{{ config('adminlte.preloader.img.alt', 'AdminLTE Preloader Image') }}"
-             width="{{ config('adminlte.preloader.img.width', 60) }}"
-             height="{{ config('adminlte.preloader.img.height', 60) }}"
-             style="animation-iteration-count:infinite;">
-
-    @endif
+    <h3 class="mt-3 text-primary">
+        DUOs Laundry
+    </h3>
 
 </div>
